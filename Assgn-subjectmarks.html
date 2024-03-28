@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+    function calculateGPA() {
+        let subject1 = parseFloat(document.getElementById('sub1Mark').value);
+        let subject2 = parseFloat(document.getElementById('sub2Mark').value);
+        let subject3 = parseFloat(document.getElementById('sub3Mark').value);
+        let subject4 = parseFloat(document.getElementById('sub4Mark').value);
+
+        let totalMarks = subject1 + subject2 + subject3 + subject4;
+        let marks = totalMarks / 4;
+
+        let gpa = 0;
+
+        document.getElementById('resultMark1').textContent = subject1;
+        document.getElementById('resultMark2').textContent = subject2;
+        document.getElementById('resultMark3').textContent = subject3;
+        document.getElementById('resultMark4').textContent = subject4;
+        
+
+        // document.getElementById('grid').style.display = 'none';
+        // document.getElementById('result').style.display = 'block';
+
+        if (marks >= 90) {
+            gpa = 4.0;
+        } else if (marks >= 80) {
+            gpa =  3.5;
+        } else if (marks >= 70) {
+            gpa = 3.0;
+        } else if (marks >= 60) {
+            gpa = 2.5;
+        } else if (marks >= 50) {
+            gpa = 2.0;
+        } else if (marks >= 40) {
+            gpa = 1.5;
+        } else {
+            gpa = 1.0;
+        }
+
+            document.getElementById('overallGPA').textContent = gpa.toFixed(2);
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Subject Marks</h1>
+<div class="row justify-content-center align-items-center g-1 container-fluid">
+    <div class="col">subject 1:</div>
+    <div class="col">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+                type="text"
+                class="form-control"
+                name=""
+                id="sub1Mark"
+                aria-describedby="helpId"
+                placeholder=""
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center align-items-center g-1 container-fluid">
+    <div class="col">subject 2:</div>
+    <div class="col">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+                type="text"
+                class="form-control"
+                name=""
+                id="sub2Mark"
+                aria-describedby="helpId"
+                placeholder=""
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+        </div>
+        
+    </div>
+</div>
+
+<div class="row justify-content-center align-items-center g-1 container-fluid">
+    <div class="col">subject 3:</div>
+    <div class="col">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+                type="text"
+                class="form-control"
+                name=""
+                id="sub3Mark"
+                aria-describedby="helpId"
+                placeholder=""
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="row justify-content-center align-items-center g-1 container-fluid">
+    <div class="col">subject 4:</div>
+    <div class="col">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+                type="text"
+                class="form-control"
+                name=""
+                id="sub4Mark"
+                aria-describedby="helpId"
+                placeholder=""
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center align-items-center g-1 container-fluid">
+    <div class="col">
+        <button type="button" class="btn btn-primary" onclick="calculateGPA()">
+            Submit
+        </button>
+        
+    </div>
+    <!-- <div class="col">
+        
+        </div> -->
+    </div>
+</div>
+<br>
+
+<h1>Subject Marks and GPA</h1>
+
+<div id="result" class="table-responsive" >
+    <h2>Result</h2>
+    <table class="table table-primary">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>Subject 1</td>
+            <td id="resultMark1"></td>
+        </tr>
+        <tr>
+            <td>Subject 2</td>
+            <td id="resultMark2"></td>
+        </tr>
+        <tr>
+            <td>Subject 3</td>
+            <td id="resultMark3"></td>
+        </tr>
+        <tr>
+            <td>Subject 4</td>
+            <td id="resultMark4"></td>
+        </tr>
+        <tr>
+            <th>Overall GPA</th>
+            <td id="overallGPA"></td>
+        </tr>
+    </table>
+
+    
+    
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
